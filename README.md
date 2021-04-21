@@ -2,8 +2,8 @@
 
 Visualizations using Pluto.jl notebooks.
 
-[How the L1 penalty achieves sparsity](https://mybinder.org/v2/gh/sens/visuals/main?urlpath=pluto/open?path=/home/jovyan/notebooks/L1-penalty.jl)
-[How the proximal operator works](https://mybinder.org/v2/gh/sens/visuals/main?urlpath=pluto/open?path=/home/jovyan/notebooks/prox.jl)
+- [How the L1 penalty achieves sparsity](https://mybinder.org/v2/gh/sens/visuals/main?urlpath=pluto/open?path=/home/jovyan/notebooks/L1-penalty.jl)
+- [How the proximal operator works](https://mybinder.org/v2/gh/sens/visuals/main?urlpath=pluto/open?path=/home/jovyan/notebooks/prox.jl)
 
 ## Thanks
 
