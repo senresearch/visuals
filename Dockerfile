@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:latest
+FROM jupyter/base-notebook:latest
 
 USER root
 RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.3-linux-x86_64.tar.gz && \
@@ -18,7 +18,7 @@ COPY --chown=${NB_USER}:users ./notebooks ./notebooks
 COPY --chown=${NB_USER}:users ./Project.toml ./Project.toml
 COPY --chown=${NB_USER}:users ./Manifest.toml ./Manifest.toml
 
-ENV JULIA_PROJECT=/home/sens
+ENV JULIA_PROJECT=/home/jovyan
 RUN julia -e "import Pkg; Pkg.Registry.update(); Pkg.instantiate(); Pkg.status(); Pkg.precompile()"
 
 RUN jupyter labextension install @jupyterlab/server-proxy && \
