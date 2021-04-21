@@ -18,7 +18,6 @@ begin
         using Plots
         using PlutoUI
         using LaTeXStrings
-        using Symbolics
 	    using Optim
 end
 
