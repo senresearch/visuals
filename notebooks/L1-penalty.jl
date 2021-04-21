@@ -127,8 +127,8 @@ Thus, sparsity is achieved by making the penalty $\lambda$ large enough.
 # ╟─e52889b0-9d46-11eb-33f1-cf0665f314a7
 # ╟─7a97d5bb-9871-454c-a0be-ed54a54aab12
 # ╟─d0c3b87e-05bd-44bd-8abb-18f97aa4c25e
-# ╟─48b97b44-963b-45a9-aefa-ca57aa8acf50
-# ╠═638c74d9-ad4d-4776-831b-8166faf063ab
+# ╠═48b97b44-963b-45a9-aefa-ca57aa8acf50
+# ╟─638c74d9-ad4d-4776-831b-8166faf063ab
 # ╟─f3aeaeac-f622-4509-8fa3-5831c619073d
 # ╟─1e45a2cf-162b-4a01-9ba7-0f52d76479ac
 # ╟─e99e3483-3f70-4ccb-928e-580f9288f19d
