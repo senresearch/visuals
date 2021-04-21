@@ -87,6 +87,20 @@ md"""
 Now, we will plot this function by varying $\lambda$ with the slider.  We can see that when $\lambda=0$, the function is minimized at $2.0$, but as we increase $\lambda$, the point where the function is minimized is drawn (shrunk) towards $0.0$.
 """
 
+# ╔═╡ 1e45a2cf-162b-4a01-9ba7-0f52d76479ac
+md"""
+---
+"""
+
+# ╔═╡ e99e3483-3f70-4ccb-928e-580f9288f19d
+md"""
+## Shrinkage of minimizer
+
+The graph below shows the the quadratic loss (in grey) and the penalized version of the loss (in salmon).  Notice the kink of the penalized function at zero; this is due to the penalty term.  The curve is continuous, but does not have a continuous derivative at zero.
+
+Vary the penalty with the $\lambda$ slider below.
+"""
+
 # ╔═╡ 634ad033-d869-4a98-9ea7-0e749d080e6e
 md"""
 λ: 0.0 $(@bind λ Slider(0.0:0.1:5.0, default=1.0)) 5.0
@@ -100,6 +114,15 @@ begin
 	scatter!([(optimize(x->f(x,λ),-6,8).minimizer,0)],label="Penalized minimizer",color="salmon")
 end
 
+# ╔═╡ d69f3d84-53a9-4595-9d0c-87eeeec3e42f
+md"""
+The least squares (LS) minimizer is 2.0 (without) the penalty. The penalized minimizer slides towards zero, as the penalty is increased; when the penalty is large enough, the minimizer is zero.
+
+This is also what happens with L$_1$-penalized regression.  When the penalty is zero, we get least squares estimates.  As we increase the penalty, the estimates shrink towards zero, and for large enough penalty, they are exactly zero.  By minimizing the penalized criterion, we can perform shrinkage estimation, and model selection (since some estimates will be exactly zero).
+
+Thus, sparsity is achieved by making the penalty $\lambda$ large enough.
+"""
+
 # ╔═╡ Cell order:
 # ╟─e52889b0-9d46-11eb-33f1-cf0665f314a7
 # ╟─7a97d5bb-9871-454c-a0be-ed54a54aab12
@@ -107,5 +130,8 @@ end
 # ╟─48b97b44-963b-45a9-aefa-ca57aa8acf50
 # ╠═638c74d9-ad4d-4776-831b-8166faf063ab
 # ╟─f3aeaeac-f622-4509-8fa3-5831c619073d
+# ╟─1e45a2cf-162b-4a01-9ba7-0f52d76479ac
+# ╟─e99e3483-3f70-4ccb-928e-580f9288f19d
 # ╟─634ad033-d869-4a98-9ea7-0e749d080e6e
 # ╟─de1e52c5-c798-4901-b959-43f1599614ca
+# ╟─d69f3d84-53a9-4595-9d0c-87eeeec3e42f
