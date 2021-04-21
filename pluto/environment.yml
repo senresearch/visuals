@@ -1,0 +1,11 @@
+name: L1
+
+channels:
+  - conda-forge
+  - conda
+  
+dependencies:
+  - Plots
+  - PlutoUI
+  - LaTeXStrings
+  - Optim
