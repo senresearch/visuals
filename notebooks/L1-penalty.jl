@@ -73,14 +73,14 @@ md"""
 
 Consider, a simplified version of the problem, by trying to minimize with respect to (a scalar) $\beta$, the function:
 
-$f(x) = (x-2)^2 + \lambda |x|.$
+$f(\beta) = (\beta-2)^2 + \lambda |\beta|.$
 
 This has the same form as the L$_1$ penalized regression criterion, and is simplified to show the essential features.  The first term is a squared error loss, and the second term is the penalty.
 
 """
 
 # ╔═╡ 48b97b44-963b-45a9-aefa-ca57aa8acf50
-f(x,λ) = (x-2.0)^2 + λ*abs(x)
+f(β,λ) = (β-2.0)^2 + λ*abs(β)
 
 # ╔═╡ f3aeaeac-f622-4509-8fa3-5831c619073d
 md"""
@@ -108,10 +108,11 @@ md"""
 
 # ╔═╡ de1e52c5-c798-4901-b959-43f1599614ca
 begin
-	plot(x-> f(x,0.0),-7,8,ylim=(0,80),label="(x-2)²",color="grey")
-	plot!(x-> f(x,λ),-7,8,label="(x-2)²+λ|x|",color="salmon")
+	plot(x-> f(x,0.0),-7,8,ylim=(0,80),label="(β-2)²",color="grey",xlab="β")
+	plot!(x-> f(x,λ),-7,8,label="(β-2)²+λ|β|",color="salmon")
 	scatter!([(2.0,0.0)],color="grey",label="LS minimizer")
-	scatter!([(optimize(x->f(x,λ),-6,8).minimizer,0)],label="Penalized minimizer",color="salmon")
+	scatter!([(optimize(x->f(x,λ),-6,8).minimizer,0)],
+		label="Penalized minimizer",color="salmon")
 end
 
 # ╔═╡ d69f3d84-53a9-4595-9d0c-87eeeec3e42f
